@@ -6,12 +6,30 @@
 
 const home = require('../app/controllers/home');
 
-/**
- * Expose
- */
+module.exports = function(app, _passport, mongoose) {
+  const Record = mongoose.model('Record');
 
-module.exports = function(app) {
   app.get('/', home.index);
+
+  app.get('/record', async (_request, response) => {
+    try {
+      var result = await Record.find().exec();
+      response.send(result);
+    } catch (error) {
+      response.status(500).send(error);
+    }
+  });
+
+  app.post('/record', async (request, response) => {
+    try {
+      const record = Record(request.body);
+      const result = await record.save();
+
+      response.send(result);
+    } catch (error) {
+      response.status(500).send(error);
+    }
+  });
 
   /**
    * Error handling
