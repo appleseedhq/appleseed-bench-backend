@@ -1,2 +1,3 @@
-# benchmark-backend
+# appleseed-benchmark-backend
+
 Backend for appleseed.bench
