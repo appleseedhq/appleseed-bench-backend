@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 /**
@@ -6,13 +6,14 @@ const Schema = mongoose.Schema;
  */
 
 const RecordSchema = new Schema({
-  submissionDatetimeUtc: { type: Date },
-  benchmarkVersion: { type: Number, min: 1, index: true },
-  sceneId: { type: String, default: '', index: true },
-  cpuManufacturerId: { type: String, default: '', index: true },
-  cpuModel: { type: String, default: '', index: true },
-  renderTime: { type: Number, index: true }
+  submissionDateTimeUtc: { type: Date },
+  benchmarkVersion: { type: Number, min: 1 },
+  benchmarkSceneId: { type: String },
+  cpuModel: { type: String },
+  renderTime: { type: Number }
 });
+
+RecordSchema.index({ benchmarkVersion: 1, benchmarkSceneId: 1, cpuModel: 1 });
 
 /**
  * Add your
@@ -37,4 +38,4 @@ RecordSchema.static({});
  * Register
  */
 
-mongoose.model('Record', RecordSchema);
+mongoose.model("Record", RecordSchema);
