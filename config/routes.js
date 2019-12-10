@@ -15,11 +15,7 @@ module.exports = function(app) {
 
   app.use(function(err, req, res, next) {
     // treat as 404
-    if (
-      err.message &&
-      (~err.message.indexOf('not found') ||
-        ~err.message.indexOf('Cast to ObjectId failed'))
-    ) {
+    if (err.message && (~err.message.indexOf('not found') || ~err.message.indexOf('Cast to ObjectId failed'))) {
       return next();
     }
     console.error(err.stack);
@@ -31,7 +27,7 @@ module.exports = function(app) {
   app.use(function(req, res) {
     res.status(404).render('404', {
       url: req.originalUrl,
-      error: 'Not found'
+      error: 'Not found',
     });
   });
 };

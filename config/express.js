@@ -29,8 +29,8 @@ module.exports = function(app, passport) {
   // Compression middleware (should be placed before express.static)
   app.use(
     compression({
-      threshold: 512
-    })
+      threshold: 512,
+    }),
   );
 
   // Use winston on production
@@ -38,8 +38,8 @@ module.exports = function(app, passport) {
   if (env !== 'development') {
     log = {
       stream: {
-        write: msg => winston.info(msg)
-      }
+        write: msg => winston.info(msg),
+      },
     };
   } else {
     log = 'dev';
@@ -50,7 +50,7 @@ module.exports = function(app, passport) {
   if (env !== 'test') app.use(morgan(log));
 
   // set views path and default layout
-  app.set('views', config.root + '/app/views');
+  app.set('views', `${config.root}/app/views`);
   app.set('view engine', 'pug');
 
   // expose package.json to views
@@ -63,8 +63,8 @@ module.exports = function(app, passport) {
   // bodyParser should be above methodOverride
   app.use(
     bodyParser.urlencoded({
-      extended: true
-    })
+      extended: true,
+    }),
   );
   app.use(bodyParser.json());
   app.use(
@@ -75,7 +75,7 @@ module.exports = function(app, passport) {
         delete req.body._method;
         return method;
       }
-    })
+    }),
   );
 
   // cookieParser should be above session
@@ -88,9 +88,9 @@ module.exports = function(app, passport) {
       saveUninitialized: true,
       store: new mongoStore({
         url: config.db,
-        collection: 'sessions'
-      })
-    })
+        collection: 'sessions',
+      }),
+    }),
   );
 
   // use passport session

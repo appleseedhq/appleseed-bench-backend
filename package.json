@@ -47,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/appleseedhq/benchmark-backend"
+    "url": "git://github.com/appleseedhq/appleseed-bench-backend"
   },
   "keywords": [
     "node",

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 /**
@@ -10,7 +10,7 @@ const RecordSchema = new Schema({
   benchmarkVersion: { type: Number, min: 1 },
   benchmarkSceneId: { type: String },
   cpuModel: { type: String },
-  renderTime: { type: Number }
+  renderTime: { type: Number },
 });
 
 RecordSchema.index({ benchmarkVersion: 1, benchmarkSceneId: 1, cpuModel: 1 });
@@ -38,4 +38,4 @@ RecordSchema.static({});
  * Register
  */
 
-mongoose.model("Record", RecordSchema);
+mongoose.model('Record', RecordSchema);
