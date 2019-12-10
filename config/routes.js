@@ -6,8 +6,8 @@ const record = require('../app/controllers/record');
 module.exports = function(app) {
   app.get('/', home.index);
 
-  app.get('/record', record.list);
-  app.post('/record', record.create);
+  app.get('/results', record.list);
+  app.post('/submit', record.create);
 
   /**
    * Error handling
