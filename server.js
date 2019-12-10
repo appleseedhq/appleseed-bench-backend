@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 require('dotenv').config();
@@ -40,13 +41,19 @@ connection
   .once('open', listen);
 
 function listen() {
-  if (app.get('env') === 'test') return;
+  if (app.get('env') === 'test') {
+    return;
+  }
+
   app.listen(port);
-  console.log('Express app started on port ' + port);
+
+  console.log(`Express app started on port ${port}`);
+  console.log(`Mongose status: ${mongoose.connection.readyState === 1 ? 'OK' : 'NOTOK'}`);
 }
 
 function connect() {
-  var options = { keepAlive: 1, useNewUrlParser: true };
+  var options = { keepAlive: 1, useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true };
   mongoose.connect(config.db, options);
+
   return mongoose.connection;
 }
