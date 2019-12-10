@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-
+const express = require('express');
 const session = require('express-session');
 const compression = require('compression');
 const morgan = require('morgan');
@@ -32,6 +32,9 @@ module.exports = function(app, passport) {
       threshold: 512,
     }),
   );
+
+  // Static files middleware
+  app.use(express.static(`${config.root}/public`));
 
   // Use winston on production
   let log;

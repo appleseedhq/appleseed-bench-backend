@@ -21,7 +21,7 @@ const connection = connect();
 
 module.exports = {
   app,
-  connection
+  connection,
 };
 
 // Bootstrap models
