@@ -1,0 +1,55 @@
+{
+  "name": "node-express-mongoose",
+  "description": "Backend for appleseed.bench",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.x"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon server.js",
+    "prod": "cross-env NODE_ENV=production node server"
+  },
+  "dependencies": {
+    "body-parser": "~1.19.0",
+    "co": "~4.6.0",
+    "compression": "~1.7.4",
+    "connect-flash": "~0.1.1",
+    "connect-mongo": "~2.0.3",
+    "cookie-parser": "~1.4.4",
+    "cross-env": "~5.2.0",
+    "dotenv": "~8.0.0",
+    "express": "~4.17.0",
+    "express-session": "~1.16.1",
+    "helmet": "~3.18.0",
+    "method-override": "~3.0.0",
+    "mongoose": "~5.5.11",
+    "morgan": "~1.9.1",
+    "passport": "~0.4.0",
+    "passport-local": "~1.0.0",
+    "pm2": "~3.5.0",
+    "pug": "~2.0.3",
+    "view-helpers": "~0.2.0",
+    "winston": "~3.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "~10.0.1",
+    "babel-tape-runner": "~3.0.0",
+    "eslint": "~5.16.0",
+    "eslint-config-prettier": "~4.3.0",
+    "eslint-plugin-prettier": "~3.1.0",
+    "nodemon": "1.19.0",
+    "npm-check-updates": "~3.1.9",
+    "prettier": "~1.17.1",
+    "supertest": "*",
+    "tape": "~4.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/appleseedhq/appleseed-bench-backend"
+  },
+  "keywords": [
+    "node",
+    "mongoose",
+    "express"
+  ]
+}
