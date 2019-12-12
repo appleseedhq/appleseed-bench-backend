@@ -5,13 +5,18 @@ const Schema = mongoose.Schema;
  * Record schema
  */
 
-const RecordSchema = new Schema({
-  submissionDateTimeUtc: { type: Date },
-  benchmarkVersion: { type: Number, min: 1 },
-  benchmarkSceneId: { type: String },
-  cpuModel: { type: String },
-  renderTime: { type: Number },
-});
+const RecordSchema = new Schema(
+  {
+    submissionDateTimeUtc: { type: Date },
+    benchmarkVersion: { type: Number, min: 1 },
+    benchmarkSceneId: { type: String },
+    cpuModel: { type: String },
+    renderTime: { type: Number },
+  },
+  {
+    versionKey: false,
+  },
+);
 
 RecordSchema.index({ benchmarkVersion: 1, benchmarkSceneId: 1, cpuModel: 1 });
 
