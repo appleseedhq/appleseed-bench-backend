@@ -33,7 +33,7 @@ fs.readdirSync(models)
 // Bootstrap routes
 require('./config/passport')(passport);
 require('./config/express')(app, passport);
-require('./config/routes')(app);
+require('./config/routes')(app, config);
 
 connection
   .on('error', console.log)
