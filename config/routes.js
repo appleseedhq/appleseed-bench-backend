@@ -3,11 +3,15 @@
 const home = require('../app/controllers/home');
 const record = require('../app/controllers/record');
 
-module.exports = function(app) {
+const Utils = require('./utils');
+
+module.exports = function(app, config) {
+  const utils = new Utils(config);
+
   app.get('/', home.index);
 
-  app.get('/results', record.list);
-  app.post('/submit', record.create);
+  app.get('/results', utils.APIKeyChecker, record.list);
+  app.post('/submit', utils.APIKeyChecker, record.create);
 
   /**
    * Error handling
