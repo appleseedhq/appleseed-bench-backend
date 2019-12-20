@@ -2,7 +2,7 @@
 
 This is the backend service for appleseed.bench, appleseed's standalone benchmarking application.
 
-It is written using Node.js.
+It is written using [Node.js](https://nodejs.org/).
 
 ### Getting Started
 
@@ -16,4 +16,4 @@ It is written using Node.js.
 
 ### Visual Studio Code Extensions
 
-- Prettier - Code formatter
+- [Prettier](https://prettier.io/) - Code formatter
