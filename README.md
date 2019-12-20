@@ -12,7 +12,7 @@ It is written using [Node.js](https://nodejs.org/).
 - Clone the repository: `git clone https://github.com/appleseedhq/appleseed-bench-backend`.
 - Create a file named `.env` by copying the `.env.sample` template.
 - In a terminal type `npm install` then `npm start`.
-- Open `http://localhost:3000` in a web browser.
+- Open http://localhost:3000 in a web browser.
 
 ### Visual Studio Code Extensions
 
