@@ -1,6 +1,8 @@
 # appleseed-bench-backend
 
-This is the backend service for appleseed.bench, appleseed's standalone benchmarking application. It is written using Node.js.
+This is the backend service for appleseed.bench, appleseed's standalone benchmarking application.
+
+It is written using Node.js.
 
 ### Getting Started
 
