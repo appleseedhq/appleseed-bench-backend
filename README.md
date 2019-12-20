@@ -1,23 +1,17 @@
 # appleseed-bench-backend
 
-Backend for appleseed.bench
+This is the backend service for appleseed.bench, appleseed's standalone benchmarking application. It is written using Node.js.
 
-## Getting Started
+### Getting Started
 
-The recommended way to get started is by installing Git, NPM (Node Package Manager) to have all the needed dependencies in your project.
+- Make sure Git and npm (Node Package Manager) are installed.
+- Install a MongoDB server:
+  - On Windows: https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows
+- Clone the repository: `git clone https://github.com/appleseedhq/appleseed-bench-backend`.
+- Create a file named `.env` by copying the `.env.sample` template.
+- In a terminal type `npm install` then `npm start`.
+- Open `http://localhost:3000` in a web browser.
 
-### Installation
-
-- Clone the repository: `git clone https://github.com/appleseedhq/appleseed-bench-backend`
-
-### How to build and run Node project
-
-- Create a new .env file from the .env.sample template
-- Install a MongoDb server:
-  - Windows: https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows
-- In a command line editor type `npm install` and `npm start`
-- Open a navigator web and browse to `http://localhost:3000`
-
-### VS Code extensions
+### Visual Studio Code Extensions
 
 - Prettier - Code formatter
