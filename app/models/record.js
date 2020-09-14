@@ -7,15 +7,15 @@ const Schema = mongoose.Schema;
 
 const RecordSchema = new Schema(
   {
-    submissionDateTimeUtc: { type: Date },
-    benchmarkVersion: { type: Number, min: 1, index: true },
-    benchmarkSceneId: { type: String, index: true },
-    cpuModel: { type: String, index: true },
-    cpuCoreCount: { type: Number, index: true },
-    cpuThreadCount: { type: Number, index: true },
-    renderThreadCount: { type: Number, index: true },
-    operatingSystem: { type: String, index: true },
-    renderTime: { type: Number },
+    submissionDateTimeUtc: { type: Date, required: true },
+    benchmarkVersion: { type: Number, required: true, index: true, min: 1 },
+    benchmarkSceneId: { type: String, required: true, index: true },
+    cpuModel: { type: String, required: true, index: true },
+    cpuCoreCount: { type: Number, required: true, index: true },
+    cpuThreadCount: { type: Number, required: true, index: true },
+    renderThreadCount: { type: Number, required: true, index: true },
+    operatingSystem: { type: String, required: true, index: true },
+    renderTime: { type: Number, required: true },
   },
   {
     versionKey: false,
